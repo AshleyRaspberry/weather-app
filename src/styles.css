@@ -64,15 +64,9 @@ body {
   }
   
   #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+    padding-bottom: 2.5rem;   
   }
   
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
   .link-container {
     text-align: center;
     margin: 0 auto;
