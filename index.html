@@ -22,57 +22,67 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-6">
-              <input type="search" placeholder="Type a city" id="city-input" />
-            </div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  placeholder="Type a city"
+                  id="city-input"
+                />
+              </div>
 
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="form-control btn btn-primary shadow-sm"
-              />
-            </div>
-            <div class="col-3">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                id="current-location-btn"
-              >
-                Current Weather
-              </button>
-            </div>
-          </div>
-        </form>
-        <h1 id="city"></h1>
-        <ul>
-          <li id="date"></li>
-          <li id="description"></li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <div class="clearfix">
-              <div class="float-left">
-                <span class="temperature" id="temperature"></span
-                ><span class="units">°F</span>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="current-location-btn"
+                >
+                  Current Weather
+                </button>
               </div>
             </div>
-          </div>
-          <div class="col-6">
-            <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind"></span>mph</li>
-            </ul>
+          </form>
+          <h1 id="city"></h1>
+          <ul>
+            <li id="date"></li>
+            <li id="description"></li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix">
+                <div class="float-left">
+                  <span class="temperature" id="temperature"></span
+                  ><span class="units">°F</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>mph</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <a
+          href="https://github.com/AshleyRaspberry/weather-app"
+          target="_blank"
+        >
+          Open-sourced code</a
+        >
+        by Ashley Bondurant 🌞
       </div>
     </div>
     <script src="src/index.js"></script>
-    <footer> <div id="page-container">
-      </div>
-      <a href="https://github.com/AshleyRaspberry/weather-app"> Open-sourced code</a> by Ashley Bondurant
   </body>
 </html>

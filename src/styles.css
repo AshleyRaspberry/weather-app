@@ -26,10 +26,15 @@ body {
     vertical-align: middle;
     border-style: none;
   }
-  .clearfix::after {
+  .d-flex weather-temperature::after {
     display: block;
     clear: both;
     content: "";
+  }
+
+  .weather-app-wrapper {
+    max-width: 600px;
+    margin: 30px auto;
   }
   
   .weather-app {
@@ -39,11 +44,8 @@ body {
     max-width: 600px;
     border-radius: 10px;
   }
-  .sun-icon {
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
-  }
+
+
   .temperature {
     font-weight: 400;
     color: #5c5d61;
