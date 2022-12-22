@@ -74,6 +74,7 @@ function formatDate(date) {
   dateElement.innerHTML = formatDate(currentTime);
 
   
+  
   let currentLocationButton = document.querySelector("#current-location-btn");
   currentLocationButton.addEventListener("click", getCurrentLocation);
 
@@ -87,10 +88,13 @@ function formatDate(date) {
     temperature.innerHTML = Math.round(celsiusTemperature);
   }
 
-  searchCity("New Orleans");
+let fahrenheitTemperature = null;
+
   
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
 let celsiusLink = document.querySelector("#celsius-link"); 
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+searchCity("New Orleans");
