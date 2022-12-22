@@ -80,28 +80,41 @@ fahrenheitTemperature = response.data.main.temp;
   let currentLocationButton = document.querySelector("#current-location-btn");
   currentLocationButton.addEventListener("click", getCurrentLocation);
 
-let fahrenheitTemperature = null;
+
+
 
   function displayCelsiusTemperature(event) {
     event.preventDefault();
-    let fahrenheitTemperature = document.querySelector("#temperature").innerHTML;
-    let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
     let temperature = document.querySelector("#temperature");
+    
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+
+    let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
     temperature.innerHTML = Math.round(celsiusTemperature);
   }
+
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = fahrenheitTemperature;
+
+  fahrenheitLink.classList.add("active");
+celsiusLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature"); 
+  temperature.innerHTML = Math.round(fahrenheitTemperature); 
+  let fahrenheitTemperature = document.querySelector("#temperature").innerHTML;
 }
-  
+
+let fahrenheitTemperature = null;
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link"); 
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let FahrenheitLink = document.querySelector("#fahrenheit-link"); 
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+let fahrenheitLink = document.querySelector("#fahrenheit-link"); 
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 searchCity("New Orleans");
