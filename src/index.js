@@ -77,19 +77,20 @@ function formatDate(date) {
   let currentLocationButton = document.querySelector("#current-location-btn");
   currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("New Orleans");
+
+
+  function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    let fahrenheitTemperature = document.querySelector("#temperature").innerHTML;
+    let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
+    let temperature = document.querySelector("#temperature");
+    temperature.innerHTML = Math.round(celsiusTemperature);
+  }
+
+  searchCity("New Orleans");
   
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = document.querySelector("#fahrenheitTemperature").innerHTML;
-  let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
 let celsiusLink = document.querySelector("#celsius-link"); 
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
