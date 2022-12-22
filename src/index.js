@@ -23,6 +23,8 @@ function formatDate(date) {
     return `${day} ${hours}:${minutes}`;
   }
   
+
+
   function displayWeather(response) {
     console.log(response.data);
     console.log(response.data.name);
@@ -31,6 +33,8 @@ function formatDate(date) {
       response.data.main.temp
 
     );
+
+fahrenheitTemperature = response.data.main.temp;
 
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
@@ -73,8 +77,6 @@ function formatDate(date) {
   let currentTime = new Date();
   dateElement.innerHTML = formatDate(currentTime);
 
-  
-  
   let currentLocationButton = document.querySelector("#current-location-btn");
   currentLocationButton.addEventListener("click", getCurrentLocation);
 
@@ -87,6 +89,7 @@ function formatDate(date) {
     let temperature = document.querySelector("#temperature");
     temperature.innerHTML = Math.round(celsiusTemperature);
   }
+
 
 let fahrenheitTemperature = null;
 
