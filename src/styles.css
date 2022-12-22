@@ -32,6 +32,7 @@ body {
     display: block;
     clear: both;
     content: "";
+    font-size: 64px;
   }
 
   .weather-app-wrapper {
@@ -46,9 +47,15 @@ body {
     max-width: 600px;
     border-radius: 10px;
   }
-  .overview {
-    margin-bottom: 20px;
-  }
+.overview {
+  margin-bottom: 20px;
+}
+.weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
 
   .temperature {
     font-weight: 400;
