@@ -33,7 +33,7 @@ function formatDate(date) {
     );
 
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    
+
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
@@ -73,12 +73,23 @@ function formatDate(date) {
   let currentTime = new Date();
   dateElement.innerHTML = formatDate(currentTime);
 
-
-  let searchForm = document.querySelector("#search-form");
-  searchForm.addEventListener("submit", handleSubmit);
   
   let currentLocationButton = document.querySelector("#current-location-btn");
   currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("New Orleans");
   
-  searchCity("New Orleans");
-  
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = document.querySelector("#fahrenheitTemperature").innerHTML;
+  let celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link"); 
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
